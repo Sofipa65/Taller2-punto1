@@ -71,8 +71,14 @@ public class Taller2Punto1 {
                     
                     if (e.getNombreEquipo().equalsIgnoreCase(equipoBuscado)){
                         
-                        String pais= e.getPais();
-                        e.agregarCompetidor(pais);
+                        int op= Integer.parseInt(JOptionPane.showInputDialog("¿El país es igual al del equipo?\n 1. SI   2. NO"));
+                        if (op == 1) {
+                            String pais= e.getPais();
+                            e.agregarCompetidor(pais);
+                            
+                        } else if (op == 2) {
+                            e.agregarCompetidor();
+                        }
                         JOptionPane.showMessageDialog(null, "Competidor agregado correctamente");
                         return;
                     }

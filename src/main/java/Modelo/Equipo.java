@@ -45,12 +45,22 @@ public class Equipo {
         Competidor competidor= new Competidor(nombre, edad, pais, estatura, peso, puntos);
         competidores.add(competidor);    
     }
+    
+    public void agregarCompetidor(){
+        
+        String nombre= JOptionPane.showInputDialog("Ingrese el nombre del competidor: ");
+        int edad= Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del competidor: "));
+        String pais = JOptionPane.showInputDialog("Ingrese el pais del competidor: ");
+        double estatura= Double.parseDouble(JOptionPane.showInputDialog("Ingrese la estatura del competidor: "));
+        double peso= Double.parseDouble(JOptionPane.showInputDialog("Ingrese el peso del competidor: "));
+        int puntos= Integer.parseInt(JOptionPane.showInputDialog("Ingrese el puntaje actual del competidor: "));
+        
+        Competidor competidor= new Competidor(nombre, edad, pais, estatura, peso, puntos);
+        competidores.add(competidor);    
+    }
 
     @Override
     public String toString() {
         return "Equipo: " + nombreEquipo + "  | Pais: " + pais + "  | Cantidad competidores: " + competidores.size() + "\n";
-    }
-    
-    
-    
+    }   
 }

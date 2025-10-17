@@ -27,7 +27,7 @@ public class Competencia {
          
          equipos.add(equipo);
          
-         JOptionPane.showMessageDialog(null, "equipo agregado correctamente");
+         JOptionPane.showMessageDialog(null, "Equipo agregado correctamente");
     }
 
     public String getNombreEvento() {
