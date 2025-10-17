@@ -43,7 +43,14 @@ public class Equipo {
         int puntos= Integer.parseInt(JOptionPane.showInputDialog("Ingrese el puntaje actual del competidor: "));
         
         Competidor competidor= new Competidor(nombre, edad, pais, estatura, peso, puntos);
-        competidores.add(competidor);
-        
+        competidores.add(competidor);    
     }
+
+    @Override
+    public String toString() {
+        return "Equipo:" + nombreEquipo + " |pais=" + pais + " |cantidad competidores:" + competidores.size() ;
+    }
+    
+    
+    
 }

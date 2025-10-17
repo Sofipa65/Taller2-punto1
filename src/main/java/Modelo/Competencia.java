@@ -37,6 +37,11 @@ public class Competencia {
     public ArrayList<Equipo> getEquipos() {
         return equipos;
     }
+
+    @Override
+    public String toString() {
+        return "Resumen Competencia: " + nombreEvento + "\n Equipos:" + equipos.toString() ;
+    }
      
     
     

@@ -50,7 +50,6 @@ public class Taller2Punto1 {
                         String pais= e.getPais();
                         e.agregarCompetidor(pais);
                         JOptionPane.showMessageDialog(null, "Competidor agregado correctamente");
-                        return;
                     }
                 }
                 JOptionPane.showMessageDialog(null, "Equipo no encontrado");    
@@ -80,13 +79,18 @@ public class Taller2Punto1 {
             }
             case 4 -> {
                 
+                JOptionPane.showMessageDialog(null, competencia.toString());
+                
             }
             
             case 5 -> {
                 
-                organizarRanking(competencia);
-                    
-                }   
+                ArrayList<Competidor> competidoresGlobal = new ArrayList<>();
+                organizarRanking(competencia, competidoresGlobal);
+                String lista= competidoresGlobal.toString();
+                JOptionPane.showMessageDialog(null, lista);     
+            } 
+            
             case 6 -> { 
                 JOptionPane.showMessageDialog(null, "Saliendo del sistema");
             }
@@ -96,9 +100,7 @@ public class Taller2Punto1 {
         
     }
    
-    public static void organizarRanking(Competencia competencia){
-        
-        ArrayList<Competidor> competidoresGlobal = new ArrayList<>();
+    public static void organizarRanking(Competencia competencia, ArrayList<Competidor> competidoresGlobal){
         
         for (Equipo e : competencia.getEquipos()) {
             

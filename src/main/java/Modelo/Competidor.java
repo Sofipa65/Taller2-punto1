@@ -88,4 +88,14 @@ public class Competidor {
         
         this.puntos += puntosObtenidos;
     }
+
+    @Override
+    public String toString() {
+        return """
+               Competidores:
+                -"""+ nombre + " |edad: " + edad + "|pais: " + pais + " |rankingMundial: " + rankingMundial + " |estatura:" + estatura + " |peso:" + peso + " |puntos:" + puntos;
+    }
+    
+    
+    
 }
