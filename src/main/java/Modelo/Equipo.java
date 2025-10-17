@@ -48,7 +48,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo:" + nombreEquipo + " |pais=" + pais + " |cantidad competidores:" + competidores.size() ;
+        return "Equipo: " + nombreEquipo + "  | Pais: " + pais + "  | Cantidad competidores: " + competidores.size() + "\n";
     }
     
     

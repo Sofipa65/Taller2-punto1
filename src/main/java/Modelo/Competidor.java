@@ -91,9 +91,7 @@ public class Competidor {
 
     @Override
     public String toString() {
-        return """
-               Competidores:
-                -"""+ nombre + " |edad: " + edad + "|pais: " + pais + " |rankingMundial: " + rankingMundial + " |estatura:" + estatura + " |peso:" + peso + " |puntos:" + puntos;
+        return "\n - "+ nombre + "  | Edad: " + edad + "  | pais: " + pais + "  | Ranking Mundial: " + rankingMundial + "  | Estatura:" + estatura + "  | Peso:" + peso + "  | Puntos:" + puntos;
     }
     
     

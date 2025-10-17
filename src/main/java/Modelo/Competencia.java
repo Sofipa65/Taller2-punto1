@@ -40,7 +40,7 @@ public class Competencia {
 
     @Override
     public String toString() {
-        return "Resumen Competencia: " + nombreEvento + "\n Equipos:" + equipos.toString() ;
+        return "Resumen Competencia " + nombreEvento + "\n Equipos:" + equipos.toString() ;
     }
      
     
