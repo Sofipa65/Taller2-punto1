@@ -54,10 +54,38 @@ public class Competidor {
     public int getPuntos() {
         return puntos;
     }
-    
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public void setRankingMundial(int rankingMundial) {
+        this.rankingMundial = rankingMundial;
+    }
+
+    public void setEstatura(double estatura) {
+        this.estatura = estatura;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
     
     
     public void actualizarRanking (int puntosObtenidos){
         
+        this.puntos += puntosObtenidos;
     }
 }

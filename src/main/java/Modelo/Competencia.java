@@ -5,6 +5,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,7 +25,9 @@ public class Competencia {
          
          Equipo equipo= new Equipo(nombreEquipo, pais);
          
-         equipos.add(equipo);  
+         equipos.add(equipo);
+         
+         JOptionPane.showMessageDialog(null, "equipo agregado correctamente");
     }
 
     public String getNombreEvento() {

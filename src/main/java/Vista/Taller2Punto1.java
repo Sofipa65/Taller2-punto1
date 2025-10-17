@@ -5,6 +5,8 @@
 package Vista;
 
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.Collections;
 import Modelo.Competencia;
 import Modelo.Equipo;
 import Modelo.Competidor;
@@ -26,9 +28,10 @@ public class Taller2Punto1 {
                                                              Menu  
                                                              1. Añadir equipo 
                                                              2. Añadir competidor
-                                                             3. Mostrar resumen de evento
-                                                             4. Mostrar Ranking de competidores
-                                                             5. Salir
+                                                             3. Actualizar puntajes
+                                                             4. Mostrar resumen de evento
+                                                             5. Mostrar Ranking de competidores
+                                                             6. Salir
                                                              Elija una opción: """)); 
         switch (opcion){
             case 1 -> {
@@ -52,16 +55,61 @@ public class Taller2Punto1 {
                 }
                 JOptionPane.showMessageDialog(null, "Equipo no encontrado");    
             }
-            case 3 -> 
-            case 4 -> 
-            case 5 -> { 
+            case 3 -> {
+                
+                String equipoBuscado= JOptionPane.showInputDialog("Ingrese el nombre del equipo al que desea actualizar: ");
+                
+                for (Equipo e : competencia.getEquipos()){
+                    
+                    if (e.getNombreEquipo().equalsIgnoreCase(equipoBuscado)){
+                        
+                        String competidorBuscado= JOptionPane.showInputDialog("Ingrese el nombre del competidor al cuál desea actualizarle el puntaje: ");   
+                        
+                        for (Competidor c : e.getCompetidores()){
+                            
+                            if (c.getNombre().equalsIgnoreCase(competidorBuscado)) {
+                                
+                                int puntosObtenidos= Integer.parseInt(JOptionPane.showInputDialog("Ingrese los puntos obtenidos por el competidor: "));
+                                c.actualizarRanking(puntosObtenidos);
+                            }
+                            
+                        }
+                    }
+                }
+                JOptionPane.showMessageDialog(null, "Equipo no encontrado");
+            }
+            case 4 -> {
+                
+            }
+            
+            case 5 -> {
+                
+                organizarRanking(competencia);
+                    
+                }   
+            case 6 -> { 
                 JOptionPane.showMessageDialog(null, "Saliendo del sistema");
             }
             default -> JOptionPane.showMessageDialog(null, "Opción inválida");
         }        
-        }while(opcion !=5);
+        }while(opcion !=6);
         
     }
-    
+   
+    public static void organizarRanking(Competencia competencia){
+        
+        ArrayList<Competidor> competidoresGlobal = new ArrayList<>();
+        
+        for (Equipo e : competencia.getEquipos()) {
+            
+            competidoresGlobal.addAll(e.getCompetidores());
+        }
+        
+        Collections.sort(competidoresGlobal, (a, b) -> b.getPuntos() - a.getPuntos());
+        
+        for (int i = 0; i < competidoresGlobal.size(); i++) {
+            competidoresGlobal.get(i).setRankingMundial(i + 1);
+        }  
+    }
     
 }
